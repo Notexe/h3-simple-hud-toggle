@@ -1,0 +1,90 @@
+{
+	"tempHash": "0093B7139387B988",
+	"tbluHash": "004D99E9BEC3EA51",
+	"patch": [
+		{
+			"SubEntityOperation": [
+				"77bed13890286553",
+				{
+					"PatchArrayPropertyValue": [
+						"m_aChildren",
+						[{ "AddItemAfter": ["baa03f5de887c15d", "cafe0b2fe774bab3"] }]
+					]
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe192bac12ad97",
+				{
+					"parent": "6933599ccecbd1ed",
+					"name": "SimpleHUDToggle",
+					"factory": "[modules:/zentity.class].pc_entitytype",
+					"blueprint": "[modules:/zentity.class].pc_entityblueprint"
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe0b2fe774bab3",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "SimpleHUDToggle",
+					"factory": "[assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].pc_entitytype",
+					"blueprint": "[assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].pc_entityblueprint",
+					"properties": {
+						"m_pMovieResource": {
+							"type": "ZRuntimeResourceID",
+							"value": { "resource": "[assembly:/ui/controls/SimpleHUDToggle.swf].pc_swf", "flag": "5F" }
+						},
+						"m_sClassName": { "type": "ZString", "value": "simplehudtoggle.SimpleHUDToggle" }
+					},
+					"events": { "ToggleHUD": { "Poll": ["cafe3e350c31a899"] } }
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafef8f9e390df74",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "HUDControl",
+					"factory": "[assembly:/_pro/design/gamecore/hud/hud.template?/hudcontrol.entitytemplate].pc_entitytype",
+					"blueprint": "[assembly:/_pro/design/gamecore/hud/hud.template?/hudcontrol.entitytemplate].pc_entityblueprint"
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafea559811d7eaa",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "Is HUD Visible",
+					"factory": "[modules:/zuicontrolvisiblecondition.class].pc_entitytype",
+					"blueprint": "[modules:/zuicontrolvisiblecondition.class].pc_entityblueprint",
+					"properties": {
+						"m_isEnabled": { "type": "bool", "value": true },
+						"m_TargetControl": { "type": "SEntityTemplateReference", "value": "db9f74950fec79f8" }
+					}
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe3e350c31a899",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "ValueBool_Poll",
+					"factory": "[assembly:/_pro/design/logic/valuebool.template?/valuebool_poll.entitytemplate].pc_entitytype",
+					"blueprint": "[assembly:/_pro/design/logic/valuebool.template?/valuebool_poll.entitytemplate].pc_entityblueprint",
+					"properties": { "m_rValueEntity": { "type": "SEntityTemplateReference", "value": "cafea559811d7eaa" } },
+					"events": {
+						"PollFalse": { "InstantOn": ["cafef8f9e390df74"] },
+						"PollTrue": { "InstantOff": ["cafef8f9e390df74"] }
+					}
+				}
+			]
+		}
+	],
+	"patchVersion": 6
+}

@@ -3,7 +3,8 @@
 	"version": "0.2.0",
 	"id": "Notex.SimpleHUDToggle",
 	"name": "Simple HUD Toggle",
-	"description": "Adds a keybind (Ctrl + F8) which allows you to toggle the in-game HUD easily.",
+	"description": "Adds a keybind (Ctrl + F2) which allows you to toggle the in-game HUD easily.",
+	"contentFolders": ["content"],
 	"authors": ["Notex"],
 	"frameworkVersion": "2.33.7",
 	"updateCheck": "https://github.com/Notexe/h3-simple-hud-toggle/releases/latest/download/updates.json"

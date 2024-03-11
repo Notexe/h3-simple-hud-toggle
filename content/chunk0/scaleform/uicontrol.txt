@@ -1,0 +1,8 @@
+common.BaseControl:
+00E5900DBBE15EB9.UICT,[assembly:/ui/controls/SimpleHUDToggle.swf?/common.BaseControl.uic].pc_entitytype
+0096C5BB3C4C8D35.UICB,[assembly:/ui/controls/SimpleHUDToggle.swf?/common.BaseControl.uic].pc_entityblueprint
+
+simplehudtoggle.SimpleHUDToggle:
+00CA9B2E821B20BA.UICT,[assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].pc_entitytype
+0059F5FED2373E76.UICB,[assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].pc_entityblueprint
+
