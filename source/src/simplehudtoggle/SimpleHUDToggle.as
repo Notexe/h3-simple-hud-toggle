@@ -4,10 +4,11 @@ import common.BaseControl;
 import flash.events.Event;
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
+import flash.utils.describeType;
 
 public class SimpleHUDToggle extends BaseControl {
 
-	private var m_modifierKey:String = "control";
+	private var m_modifierKey:String = "Control";
 	private var m_mainKeyCode:uint = Keyboard.F2;
 
 	public function SimpleHUDToggle() {
@@ -30,11 +31,21 @@ public class SimpleHUDToggle extends BaseControl {
 
 	public function onSetData(object:Object):void {
 		if (object.hasOwnProperty("modifier")) {
-			m_modifierKey = object.modifier;
+			m_modifierKey = String(object.modifier).toLowerCase();
 		}
 		if (object.hasOwnProperty("key")) {
-			m_mainKeyCode = object.key;
+			m_mainKeyCode = GetKeyCodeFromString(object.key);
 		}
+	}
+
+	private function GetKeyCodeFromString(keyName:String):uint {
+		var keyboardInfo:XML = describeType(Keyboard);
+		for each (var constant:XML in keyboardInfo.constant) {
+			if (constant.@name == keyName.toUpperCase()) {
+				return Keyboard[keyName.toUpperCase()];
+			}
+		}
+		throw new Error("Key not supported: " + keyName);
 	}
 
 	public function Send_ToggleHUD():void {

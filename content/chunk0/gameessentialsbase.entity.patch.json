@@ -3,17 +3,6 @@
 	"tbluHash": "004D99E9BEC3EA51",
 	"patch": [
 		{
-			"SubEntityOperation": [
-				"77bed13890286553",
-				{
-					"PatchArrayPropertyValue": [
-						"m_aChildren",
-						[{ "AddItemAfter": ["baa03f5de887c15d", "cafe0b2fe774bab3"] }]
-					]
-				}
-			]
-		},
-		{
 			"AddEntity": [
 				"cafe192bac12ad97",
 				{
@@ -99,6 +88,20 @@
 							"type": "ZRuntimeResourceID",
 							"value": "[assembly:/ui/data/simplehudtoggle/configuration.json].pc_json"
 						}
+					}
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafefdf71a6b8d84",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "ControlTree",
+					"factory": "[modules:/zuicontroltreeentity.class].pc_entitytype",
+					"blueprint": "[modules:/zuicontroltreeentity.class].pc_entityblueprint",
+					"properties": {
+						"m_pRootControlEntity": { "type": "SEntityTemplateReference", "value": "cafe0b2fe774bab3" }
 					}
 				}
 			]

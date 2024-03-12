@@ -1,4 +1,4 @@
 {
-	"modifier": "control", // Possible options are: none, alt and control
-	"key": 113 // Some keycodes can be found here: https://www.toptal.com/developers/keycode/table
+	"modifier": "Control", // Possible options are: None, Alt and Control
+	"key": "F2" // Possible values can be found here (ones with uint not string. "Example: F2 : uint = 113"): https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/ui/Keyboard.html
 }
