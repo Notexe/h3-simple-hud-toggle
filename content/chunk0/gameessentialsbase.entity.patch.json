@@ -37,7 +37,8 @@
 							"type": "ZRuntimeResourceID",
 							"value": { "resource": "[assembly:/ui/controls/SimpleHUDToggle.swf].pc_swf", "flag": "5F" }
 						},
-						"m_sClassName": { "type": "ZString", "value": "simplehudtoggle.SimpleHUDToggle" }
+						"m_sClassName": { "type": "ZString", "value": "simplehudtoggle.SimpleHUDToggle" },
+						"m_pDataProvider": { "type": "SEntityTemplateReference", "value": "cafe04a61374bd3e" }
 					},
 					"events": { "ToggleHUD": { "Poll": ["cafe3e350c31a899"] } }
 				}
@@ -81,6 +82,23 @@
 					"events": {
 						"PollFalse": { "InstantOn": ["cafef8f9e390df74"] },
 						"PollTrue": { "InstantOff": ["cafef8f9e390df74"] }
+					}
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe04a61374bd3e",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "DynamicObject",
+					"factory": "[modules:/zdynamicobjectentity.class].pc_entitytype",
+					"blueprint": "[modules:/zdynamicobjectentity.class].pc_entityblueprint",
+					"properties": {
+						"m_pJSONResource": {
+							"type": "ZRuntimeResourceID",
+							"value": "[assembly:/ui/data/simplehudtoggle/configuration.json].pc_json"
+						}
 					}
 				}
 			]
