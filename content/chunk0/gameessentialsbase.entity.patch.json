@@ -15,26 +15,6 @@
 		},
 		{
 			"AddEntity": [
-				"cafe0b2fe774bab3",
-				{
-					"parent": "cafe192bac12ad97",
-					"name": "SimpleHUDToggle",
-					"factory": "[assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].pc_entitytype",
-					"blueprint": "[assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].pc_entityblueprint",
-					"properties": {
-						"m_pMovieResource": {
-							"type": "ZRuntimeResourceID",
-							"value": { "resource": "[assembly:/ui/controls/SimpleHUDToggle.swf].pc_swf", "flag": "5F" }
-						},
-						"m_sClassName": { "type": "ZString", "value": "simplehudtoggle.SimpleHUDToggle" },
-						"m_pDataProvider": { "type": "SEntityTemplateReference", "value": "cafe04a61374bd3e" }
-					},
-					"events": { "ToggleHUD": { "Poll": ["cafe3e350c31a899"] } }
-				}
-			]
-		},
-		{
-			"AddEntity": [
 				"cafef8f9e390df74",
 				{
 					"parent": "cafe192bac12ad97",
@@ -94,15 +74,14 @@
 		},
 		{
 			"AddEntity": [
-				"cafefdf71a6b8d84",
+				"cafec3c3e91976ff",
 				{
 					"parent": "cafe192bac12ad97",
-					"name": "ControlTree",
-					"factory": "[modules:/zuicontroltreeentity.class].pc_entitytype",
-					"blueprint": "[modules:/zuicontroltreeentity.class].pc_entityblueprint",
-					"properties": {
-						"m_pRootControlEntity": { "type": "SEntityTemplateReference", "value": "cafe0b2fe774bab3" }
-					}
+					"name": "SimpleKeyEventHelper",
+					"factory": "[assembly:/Templates/UI/Controls/simplekeyeventhelper.template?/SimpleKeyEventHelper.entitytemplate].pc_entitytype",
+					"blueprint": "[assembly:/Templates/UI/Controls/simplekeyeventhelper.template?/SimpleKeyEventHelper.entitytemplate].pc_entityblueprint",
+					"properties": { "m_pDataProvider": { "type": "SEntityTemplateReference", "value": "cafe04a61374bd3e" } },
+					"events": { "Pressed": {}, "Down": { "Poll": ["cafe3e350c31a899"] }, "Up": {} }
 				}
 			]
 		}
