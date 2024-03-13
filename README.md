@@ -6,4 +6,4 @@ Adds a keybind (defaults to Ctrl + F2) which allows you to toggle the in-game HU
 
 ---
 
-`Notex.SimpleHUDToggle` v1.2.0, by Notex. This README was automatically generated from the mod's manifest.
+`Notex.SimpleHUDToggle` v1.3.0, by Notex. This README was automatically generated from the mod's manifest.
