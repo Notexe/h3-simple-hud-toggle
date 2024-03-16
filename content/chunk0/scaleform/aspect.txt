@@ -1,8 +1,0 @@
-common.BaseControl:
-0093D8AB626464E5.ASET,[assembly:/templates/aspectdummy.aspect]([assembly:/ui/controls/SimpleHUDToggle.swf?/common.BaseControl.uic].entitytype,[modules:/zuicontrollayoutlegacyaspect.class].entitytype).pc_entitytype
-00E1E55A1C38D855.ASEB,[assembly:/templates/aspectdummy.aspect]([assembly:/ui/controls/SimpleHUDToggle.swf?/common.BaseControl.uic].entitytype,[modules:/zuicontrollayoutlegacyaspect.class].entitytype).pc_entityblueprint
-
-simplehudtoggle.SimpleHUDToggle:
-000E67FBFF2A9D9B.ASET,[assembly:/templates/aspectdummy.aspect]([assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].entitytype,[modules:/zuicontrollayoutlegacyaspect.class].entitytype).pc_entitytype
-007C9406F20FF3FF.ASEB,[assembly:/templates/aspectdummy.aspect]([assembly:/ui/controls/SimpleHUDToggle.swf?/simplehudtoggle.SimpleHUDToggle.uic].entitytype,[modules:/zuicontrollayoutlegacyaspect.class].entitytype).pc_entityblueprint
-
