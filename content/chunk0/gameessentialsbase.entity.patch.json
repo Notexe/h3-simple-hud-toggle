@@ -15,26 +15,16 @@
 		},
 		{
 			"AddEntity": [
-				"cafef8f9e390df74",
-				{
-					"parent": "cafe192bac12ad97",
-					"name": "HUDControl",
-					"factory": "[assembly:/_pro/design/gamecore/hud/hud.template?/hudcontrol.entitytemplate].pc_entitytype",
-					"blueprint": "[assembly:/_pro/design/gamecore/hud/hud.template?/hudcontrol.entitytemplate].pc_entityblueprint"
-				}
-			]
-		},
-		{
-			"AddEntity": [
 				"cafea559811d7eaa",
 				{
 					"parent": "cafe192bac12ad97",
-					"name": "Is HUD Visible",
+					"name": "Is MASTER_ROOT Visible",
 					"factory": "[modules:/zuicontrolvisiblecondition.class].pc_entitytype",
 					"blueprint": "[modules:/zuicontrolvisiblecondition.class].pc_entityblueprint",
 					"properties": {
 						"m_isEnabled": { "type": "bool", "value": true },
-						"m_TargetControl": { "type": "SEntityTemplateReference", "value": "db9f74950fec79f8" }
+						"m_isRecursive": { "type": "bool", "value": false },
+						"m_TargetControl": { "type": "SEntityTemplateReference", "value": "77bed13890286553" }
 					}
 				}
 			]
@@ -48,10 +38,7 @@
 					"factory": "[assembly:/_pro/design/logic/valuebool.template?/valuebool_poll.entitytemplate].pc_entitytype",
 					"blueprint": "[assembly:/_pro/design/logic/valuebool.template?/valuebool_poll.entitytemplate].pc_entityblueprint",
 					"properties": { "m_rValueEntity": { "type": "SEntityTemplateReference", "value": "cafea559811d7eaa" } },
-					"events": {
-						"PollFalse": { "InstantOn": ["cafef8f9e390df74"] },
-						"PollTrue": { "InstantOff": ["cafef8f9e390df74"] }
-					}
+					"events": { "PollFalse": { "Show": ["cafe5583e41cfa5e"] }, "PollTrue": { "Hide": ["cafe5583e41cfa5e"] } }
 				}
 			]
 		},
@@ -82,6 +69,24 @@
 					"blueprint": "[assembly:/Templates/UI/Controls/simplekeyeventhelper.template?/SimpleKeyEventHelper.entitytemplate].pc_entityblueprint",
 					"properties": { "m_pDataProvider": { "type": "SEntityTemplateReference", "value": "cafe04a61374bd3e" } },
 					"events": { "Pressed": {}, "Down": { "Poll": ["cafe3e350c31a899"] }, "Up": {} }
+				}
+			]
+		},
+		{
+			"AddEntity": [
+				"cafe5583e41cfa5e",
+				{
+					"parent": "cafe192bac12ad97",
+					"name": "VisibilityController",
+					"factory": "[modules:/zuicontrolvisibilitycontrollerentity.class].pc_entitytype",
+					"blueprint": "[modules:/zuicontrolvisibilitycontrollerentity.class].pc_entityblueprint",
+					"properties": {
+						"m_pTargetControl": {
+							"type": "SEntityTemplateReference",
+							"value": "77bed13890286553",
+							"postInit": true
+						}
+					}
 				}
 			]
 		}
